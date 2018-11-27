@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Staff_Login" />
         <activity android:name=".Staff_Start" />
-        <activity android:name=".Reservation" />
+        <activity android:name=".Staff_Reservation" />
         <activity android:name=".Staff_Room" />
         <activity android:name=".StartActivity">
             <intent-filter>
