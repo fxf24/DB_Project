@@ -52,25 +52,6 @@ public class StartActivity extends AppCompatActivity {
             Intent intent = new Intent(StartActivity.this, Staff_Start.class);
             startActivity(intent);
         }
-        else if (v.getId() == R.id.button7)
-        {
-            l1.setVisibility(View.INVISIBLE);
-            l2.setVisibility(View.VISIBLE);
-        }
-        if (v.getId() == R.id.button4){
-            l1.setVisibility(View.INVISIBLE);
-            l3.setVisibility(View.VISIBLE);
-        }
-        else if(v.getId() == R.id.button8){
-            l3.setVisibility(View.INVISIBLE);
-            l1.setVisibility(View.VISIBLE);
-
-        }
-        if(v.getId() == R.id.button9) {
-            l5.setVisibility(View.VISIBLE);
-            l3.setVisibility(View.INVISIBLE);
-
-            }
          else if(v.getId() == R.id.button10) {
             l5.setVisibility(View.INVISIBLE);
             l6.setVisibility(View.VISIBLE);
@@ -81,18 +62,9 @@ public class StartActivity extends AppCompatActivity {
             l6.setVisibility(View.INVISIBLE);
             l1.setVisibility(View.VISIBLE);
         }
-        if (v.getId() == R.id.button5){
-            l1.setVisibility(View.INVISIBLE);
-            l7.setVisibility(View.VISIBLE);
-
-        }
         if(v.getId() == R.id.button12){
             l6.setVisibility(View.VISIBLE);
             l7.setVisibility(View.INVISIBLE);
-        }
-        else if(v.getId() == R.id.button6){
-            l1.setVisibility(View.INVISIBLE);
-            l8.setVisibility(View.VISIBLE);
         }
         if(v.getId() == R.id.button13){
 

@@ -42,16 +42,6 @@
             android:hint="Member"
 
             />
-
-
-        <Button
-            android:id="@+id/button9"
-            android:onClick="OnClick"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="확인"
-            />
-
     </LinearLayout>
 
 </LinearLayout>
