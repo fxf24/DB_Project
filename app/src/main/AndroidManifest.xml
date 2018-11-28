@@ -23,7 +23,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Customer_start" />
-        <activity android:name=".Customer_Reservation"></activity>
+        <activity android:name=".Customer_Reservation" />
+        <activity android:name=".Customer_Reservation_Check" />
+        <activity android:name=".Customer_Claim" />
+        <activity android:name=".Customer_Reservation_inform"></activity>
     </application>
 
 </manifest>

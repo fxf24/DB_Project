@@ -18,11 +18,13 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/id"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:hint="ID를 입력하세요" />
 
             <EditText
+                android:id="@+id/pw"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:hint="PW를 입력하세요" />
@@ -30,7 +32,6 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button1"
             android:text="직원 로그인"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
