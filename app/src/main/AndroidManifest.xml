@@ -26,7 +26,8 @@
         <activity android:name=".Customer_Reservation" />
         <activity android:name=".Customer_Reservation_Check" />
         <activity android:name=".Customer_Claim" />
-        <activity android:name=".Customer_Reservation_inform"></activity>
+        <activity android:name=".Customer_Reservation_inform" />
+        <activity android:name=".Customer_Reservation_Room"></activity>
     </application>
 
 </manifest>

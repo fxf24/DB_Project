@@ -16,23 +16,6 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startactivity);
-
-        ListView lv1;
-        ArrayList<Data> data = new ArrayList<>();
-        Custom_Adapter adapter;
-
-        lv1 = findViewById(R.id.list_view2);
-        adapter = new Custom_Adapter(data, this);
-        data.add(new Data(R.mipmap.ic_launcher, "룸타입", "수용인원", "가격"));
-        data.add(new Data(R.mipmap.ic_launcher, "룸타입", "수용인원", "가격"));
-        data.add(new Data(R.mipmap.ic_launcher, "룸타입", "수용인원", "가격"));
-        data.add(new Data(R.mipmap.ic_launcher, "룸타입", "수용인원", "가격"));
-        data.add(new Data(R.mipmap.ic_launcher, "룸타입", "수용인원", "가격"));
-        data.add(new Data(R.mipmap.ic_launcher, "룸타입", "수용인원", "가격"));
-        data.add(new Data(R.mipmap.ic_launcher, "룸타입", "수용인원", "가격"));
-
-        lv1.setAdapter(adapter);
-
     }
 
     public void OnClick(View v) {
