@@ -23,6 +23,19 @@ public class Staff_Start extends AppCompatActivity {
         startActivity(intent_02);
     }
 
+    public void Claim(View v){
+        Intent intent_04= new Intent(getApplicationContext(), Staff_Claim.class);
+        startActivity(intent_04);
+    }
 
+    public void Roster(View v){
+        Intent intent_04= new Intent(getApplicationContext(), Staff_Calender.class);
+        startActivity(intent_04);
+    }
+
+    public void Org_chart(View v){
+        Intent intent_07 = new Intent(getApplicationContext(), Staff_Organization.class);
+        startActivity(intent_07);
+    }
 
 }

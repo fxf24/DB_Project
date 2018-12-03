@@ -22,11 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Customer_start" />
-        <activity android:name=".Customer_Reservation" />
-        <activity android:name=".Customer_Reservation_Check" />
-        <activity android:name=".Customer_Claim" />
-        <activity android:name=".Customer_Reservation_inform" />
+        <activity android:name=".Staff_Organization"></activity>
+        <activity android:name=".Staff_Calender"></activity>
+        <activity android:name=".Staff_Claim"></activity>
+        <activity android:name=".Customer_start" ></activity>
+        <activity android:name=".Customer_Reservation" ></activity>
+        <activity android:name=".Customer_Reservation_Check" ></activity>
+        <activity android:name=".Customer_Claim" ></activity>
+        <activity android:name=".Customer_Reservation_inform" ></activity>
         <activity android:name=".Customer_Reservation_Room"></activity>
     </application>
 
