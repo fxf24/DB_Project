@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="department">
+        <item>admin</item>
+        <item>Engineering</item>
+        <item>HouseKeeping</item>
+        <item>Front Office</item>
+        <item>Accounting</item>
+        <item>Human Resource</item>
+        <item>Security</item>
+        <item>Food and Beverage</item>
+    </string-array>
+</resources>

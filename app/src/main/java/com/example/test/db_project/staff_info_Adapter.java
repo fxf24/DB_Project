@@ -41,12 +41,10 @@ public class staff_info_Adapter extends BaseAdapter {
 
         TextView name_textView = convertView.findViewById(R.id.name);
         TextView position_textView = convertView.findViewById(R.id.position);
-        TextView address_textView = convertView.findViewById(R.id.address);
         TextView phone_textView = convertView.findViewById(R.id.phone);
 
         name_textView.setText(staff_infoArrayList.get(position).getName());
         position_textView.setText(staff_infoArrayList.get(position).getPosition());
-        address_textView.setText(staff_infoArrayList.get(position).getAddress());
         phone_textView.setText(staff_infoArrayList.get(position).getPhone());
 
         return convertView;

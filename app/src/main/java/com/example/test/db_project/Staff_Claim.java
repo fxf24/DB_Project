@@ -99,7 +99,7 @@ public class Staff_Claim extends AppCompatActivity implements View.OnClickListen
 
         m_oListView5 = (ListView)findViewById(R.id.floor_5);
         ListAdapter Adapter5 = new ListAdapter(Data5);
-        m_oListView5.setAdapter(Adapter4);
+        m_oListView5.setAdapter(Adapter5);
 
         Spinner Main_spinner = (Spinner)findViewById(R.id.spinner);
 

@@ -1,52 +1,49 @@
 package com.example.test.db_project;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Spinner;
 
-import com.example.test.db_project.tabLayers.TabPagerAdapter;
+import java.util.ArrayList;
 
 public class Staff_Organization extends AppCompatActivity {
-
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-
+    ArrayList<staff_info> staff_infos = new ArrayList<>();
+    staff_info_Adapter adapter;
+    ListView lv1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff_organization);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("재무회계"));
-        tabLayout.addTab(tabLayout.newTab().setText("인사기획"));
-        tabLayout.addTab(tabLayout.newTab().setText("시설안전"));
-        tabLayout.addTab(tabLayout.newTab().setText("객실팀"));
-        tabLayout.addTab(tabLayout.newTab().setText("조리팀"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        Spinner Main_spinner = findViewById(R.id.spinner_org);
 
-        viewPager = (ViewPager) findViewById(R.id.pager);
+        //스피너 어댑터 설정
+        ArrayAdapter adapterS = ArrayAdapter.createFromResource(this,R.array.department,android.R.layout.simple_spinner_item);
+        adapterS.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Main_spinner.setAdapter(adapterS);
 
-        TabPagerAdapter pagerAdapter = new TabPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(pagerAdapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        lv1 = findViewById(R.id.staffs);
+        adapter = new staff_info_Adapter(Staff_Organization.this, staff_infos);
+        lv1.setAdapter(adapter);
+        Main_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                staff_infos.clear();
+                Log.e("test2",String.valueOf(position));
+                Get_DB get_db = new Get_DB(position, staff_infos, adapter);
+                get_db.execute("organization.php", "sql=select name, position, phone_num from hr where deptID=" +(position+1));
 
             }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
-
     }
 }

@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class Custom_Adapter extends  BaseAdapter{
     ArrayList<Data> data;
     Context context;
-    private ArrayList<String> items;
 
     public Custom_Adapter(ArrayList<Data> data, Context context){
         this.data =data;

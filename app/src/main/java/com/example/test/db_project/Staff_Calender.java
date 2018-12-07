@@ -19,11 +19,7 @@ public class Staff_Calender extends Activity {
         schedule[10][30]="Staff A\nStaff Aa";//10월 30일 근무표에 Staff A,Staff Aa 저장
         schedule[10][29]="Staff B";//10월 30일 근무표에 Staff B 저장
         return schedule[a][b];
-
     }
-
-
-
 
     @Override
 
@@ -42,19 +38,16 @@ public class Staff_Calender extends Activity {
 
             @Override
 
-            public void onSelectedDayChange(CalendarView view, int year, int month,
-
-                                            int dayOfMonth) {
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
 
                 // TODO Auto-generated method stub
 
-                Toast.makeText(Staff_Calender.this, ""+year+"/"+(month+1)+"/"
+                Toast.makeText(Staff_Calender.this, ""+year+"/"+month+"/"
 
-                        +dayOfMonth+"\n"+schedule(month+1,dayOfMonth), 0).show();
+                        +dayOfMonth+"\n"+schedule(month+1,dayOfMonth), Toast.LENGTH_SHORT).show();
                         //month값에 +1 해줘야 scheudule 배열에서 날짜와 같은 인덱스안의 값을 리턴가능
 
             }
-
         });
     }
 
