@@ -21,7 +21,7 @@ public class Parking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parking);
 
-        Spinner Main_spinner = findViewById(R.id.spinner_org);
+        Spinner Main_spinner = findViewById(R.id.parking_floor);
 
         //스피너 어댑터 설정
         ArrayAdapter adapterS = ArrayAdapter.createFromResource(this,R.array.parking,android.R.layout.simple_spinner_item);
@@ -36,9 +36,8 @@ public class Parking extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 parking_info.clear();
                 Log.e("test2",String.valueOf(position));
-                Get_DB<Grid_data, Grid_adapter> get_db = new Get_DB<>(2, parking_info, adapter);
-                get_db.execute("", "");
-
+                Get_DB<Grid_data, Grid_adapter> get_db = new Get_DB<>(3, parking_info, adapter);
+                get_db.execute("parking.php", "sql=select location, availability from parking where floor='"+ (position+1)+"B'");
             }
 
             @Override

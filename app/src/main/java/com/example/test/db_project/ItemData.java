@@ -7,6 +7,8 @@ public class ItemData {
     public String strName;
     public String strClaim;
 
+
+
     public View.OnClickListener onClickListener;
 
 }

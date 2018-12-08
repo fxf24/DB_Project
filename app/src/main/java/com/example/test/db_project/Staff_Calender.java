@@ -30,12 +30,9 @@ public class Staff_Calender extends Activity {
         setContentView(R.layout.activity_staff_calender);
         //CalendarView 인스턴스 만들기
 
-        CalendarView calendar = (CalendarView)findViewById(R.id.calendar);
+        CalendarView calendar = findViewById(R.id.calendar);
         //리스너 등록
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-
-
-
             @Override
 
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {

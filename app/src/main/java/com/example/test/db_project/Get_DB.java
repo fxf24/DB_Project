@@ -16,11 +16,11 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, String> {
-    String myJSON;
-    int category;
-    JSONArray data = null;
-    ArrayList<T> dataset;
-    S adapter;
+    private String myJSON;
+    private int category;
+    private JSONArray data = null;
+    private ArrayList<T> dataset;
+    private S adapter;
 
     public Get_DB(int category, ArrayList<T> dataset, S adapter) {
         this.category = category;
@@ -28,7 +28,7 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
         this.adapter = adapter;
     }
 
-    public void showOrganization() {
+    private void showOrganization() {
         try {
             JSONObject jsonObj = new JSONObject(myJSON);
             data = jsonObj.getJSONArray("result");
@@ -47,7 +47,7 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
         }
     }
 
-    public void showBill() {
+    private void showBill() {
         try {
             JSONObject jsonObj = new JSONObject(myJSON);
             data = jsonObj.getJSONArray("result");
@@ -62,6 +62,30 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
                 String price = c.getString("price");
 
                 dataset.add((T) new Bill_data(name, date, type, item, amount,price));
+                adapter.notifyDataSetChanged();
+            }
+        } catch (Exception e) {
+            Log.e("test2", e.toString());
+        }
+    }
+
+    private void showParking() {
+        try {
+            JSONObject jsonObj = new JSONObject(myJSON);
+            data = jsonObj.getJSONArray("result");
+
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject c = data.getJSONObject(i);
+                String location = c.getString("location");
+                String availability = c.getString("availability");
+                int src;
+                if(availability.equals("yes"))
+                    src = R.drawable.parking_p;
+                else
+                    src = R.drawable.parking_n;
+
+
+                dataset.add((T) new Grid_data(src, location));
                 adapter.notifyDataSetChanged();
             }
         } catch (Exception e) {
@@ -132,6 +156,9 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
                 break;
             case 2:
                 showBill();
+                break;
+            case 3:
+                showParking();
                 break;
             default:
 
