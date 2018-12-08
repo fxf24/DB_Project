@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,13 +33,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이름"
+                android:text="이름            "
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/customer_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:hint="Gildong Hong"/>
         </LinearLayout>
 
 
@@ -35,7 +51,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="전화번호"
+                android:text="전화번호    "
                 android:textSize="20sp" />
 
             <EditText
@@ -52,16 +68,61 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="멤버 수"
+                android:text="멤버 수       "
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/customer_group_num"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:hint="3"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check in   "
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/checkin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="예) 2018-12-25" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check out"
+                android:textSize="20sp" />
+
+            <!--<Spinner-->
+                <!--android:id="@+id/checkout"-->
+                <!---->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"></Spinner>-->
+            <EditText
+                android:id="@+id/checkout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="예) 2018-12-26" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,4 +181,5 @@
 
     </LinearLayout>
 
-</LinearLayout>
+
+</FrameLayout>

@@ -1,8 +1,8 @@
 package com.example.test.db_project;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.BaseAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -15,14 +15,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class Get_DB extends AsyncTask<String, Void, String> {
+public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, String> {
     String myJSON;
     int category;
     JSONArray data = null;
-    ArrayList<staff_info> dataset;
-    staff_info_Adapter adapter;
+    ArrayList<T> dataset;
+    S adapter;
 
-    public Get_DB(int category, ArrayList<staff_info> dataset, staff_info_Adapter adapter) {
+    public Get_DB(int category, ArrayList<T> dataset, S adapter) {
         this.category = category;
         this.dataset = dataset;
         this.adapter = adapter;
@@ -39,7 +39,7 @@ public class Get_DB extends AsyncTask<String, Void, String> {
                 String position = c.getString("position");
                 String phone = c.getString("phone");
 
-                dataset.add(new staff_info(name, position, phone));
+                dataset.add((T) new staff_info(name, position, phone));
                 adapter.notifyDataSetChanged();
             }
         } catch (Exception e) {
@@ -47,6 +47,27 @@ public class Get_DB extends AsyncTask<String, Void, String> {
         }
     }
 
+    public void showBill() {
+        try {
+            JSONObject jsonObj = new JSONObject(myJSON);
+            data = jsonObj.getJSONArray("result");
+
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject c = data.getJSONObject(i);
+                String name = c.getString("name");
+                String date = c.getString("date");
+                String type = c.getString("type");
+                String item = c.getString("item");
+                String amount = c.getString("amount");
+                String price = c.getString("price");
+
+                dataset.add((T) new Bill_data(name, date, type, item, amount,price));
+                adapter.notifyDataSetChanged();
+            }
+        } catch (Exception e) {
+            Log.e("test2", e.toString());
+        }
+    }
     protected String doInBackground(String... params) {
 
         String uri = "http://192.168.0.18/"+params[0];
@@ -106,8 +127,14 @@ public class Get_DB extends AsyncTask<String, Void, String> {
         Log.e("test2", myJSON);
 
         switch (category) {
-            default:
+            case 1:
                 showOrganization();
+                break;
+            case 2:
+                showBill();
+                break;
+            default:
+
                 break;
         }
     }

@@ -1,11 +1,11 @@
 package com.example.test.db_project;
 
-public class grid_data {
+public class Grid_data {
     int src;
     String text1;
 
 
-    public grid_data(int src, String text1){
+    public Grid_data(int src, String text1){
         this.src= src;
         this.text1=text1;
 

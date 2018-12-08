@@ -21,7 +21,7 @@ public class Custom_Grid extends LinearLayout {
         tv1 = findViewById(R.id.tv1);
     }
 
-    public void setData(grid_data gd){
+    public void setData(Grid_data gd){
         iv1.setImageResource(gd.src);
         tv1.setText(gd.text1);
     }

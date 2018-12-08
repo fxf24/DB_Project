@@ -7,11 +7,11 @@ import android.widget.BaseAdapter;
 
 import java.util.ArrayList;
 
-public class grid_adapter extends BaseAdapter {
-    ArrayList<grid_data> data;
+public class Grid_adapter extends BaseAdapter {
+    ArrayList<Grid_data> data;
     Context context;
 
-    public grid_adapter(ArrayList<grid_data> data, Context context) {
+    public Grid_adapter(ArrayList<Grid_data> data, Context context) {
         this.data = data;
         this.context = context;
     }

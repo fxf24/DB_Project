@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="parking">
+        <item>1B</item>
+        <item>2B</item>
+    </string-array>
+</resources>

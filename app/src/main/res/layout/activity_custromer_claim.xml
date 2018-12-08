@@ -14,19 +14,35 @@
         android:textSize="30sp" />
 
     <EditText
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
         android:hint="내용"
+        android:gravity="top"
         android:textSize="20sp"
-
         />
 
-    <Button
-        android:id="@+id/button13"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_gravity="bottom"
-        android:onClick="OnClick"
-        android:text="확인" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_gravity="bottom"
+            android:onClick="OnClick"
+            android:text="취소" />
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_gravity="bottom"
+            android:onClick="OnClick"
+            android:text="등록" />
+
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Bill"
-        android:text="매출현황" />
+        android:text="지출현황" />
 
     <Button
         android:layout_width="wrap_content"
