@@ -10,25 +10,21 @@ import com.example.test.db_project.Custom_Dataset.reserved_room_Adapter;
 import java.util.ArrayList;
 
 public class Staff_Reservation extends AppCompatActivity {
-
     ListView reservation_list;
     reserved_room_Adapter ra1;
     ArrayList<reserved_room> reserved_roomArrayList;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff_reservation);
+
         reservation_list = findViewById(R.id.reservation_list);
-
         reserved_roomArrayList = new ArrayList<>();
-
-        reserved_roomArrayList.add(new reserved_room(101, "2018.09.07", "홍길동"));
-        reserved_roomArrayList.add(new reserved_room(102, "2018.09.07", "홍길동"));
-        reserved_roomArrayList.add(new reserved_room(103, "2018.09.07", "홍길동"));
-
         ra1 = new reserved_room_Adapter(Staff_Reservation.this, reserved_roomArrayList);
         reservation_list.setAdapter(ra1);
+
+        Get_DB<reserved_room, reserved_room_Adapter> get_db = new Get_DB<>(7, reserved_roomArrayList, ra1);
+        get_db.execute("reservation.php","sql=select roomID, date, name from reservation natural join guest order by date");
     }
 }

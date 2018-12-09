@@ -1,11 +1,13 @@
 package com.example.test.db_project;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.BaseAdapter;
 
 import com.example.test.db_project.Custom_Dataset.Bill_data;
 import com.example.test.db_project.Custom_Dataset.Grid_data;
+import com.example.test.db_project.Custom_Dataset.reserved_room;
 import com.example.test.db_project.Custom_Dataset.staff_claim_data;
 import com.example.test.db_project.Custom_Dataset.staff_info;
 import com.example.test.db_project.Custom_Dataset.staff_room_data;
@@ -27,11 +29,17 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
     private JSONArray data = null;
     private ArrayList<T> dataset;
     private S adapter;
+    private String schedule[][];
 
     public Get_DB(int category, ArrayList<T> dataset, S adapter) {
         this.category = category;
         this.dataset = dataset;
         this.adapter = adapter;
+    }
+
+    public Get_DB(int category, String[][] schedule) {
+        this.category = category;
+        this.schedule = schedule;
     }
 
     private void showOrganization() {
@@ -137,6 +145,52 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
             Log.e("test2", e.toString());
         }
     }
+
+    private void showFom() {
+        try {
+            JSONObject jsonObj = new JSONObject(myJSON);
+            data = jsonObj.getJSONArray("result");
+
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject c = data.getJSONObject(i);
+                String name = c.getString("name");
+                String month_s = c.getString("month");
+                String day_s = c.getString("day");
+
+                int month = Integer.parseInt(month_s);
+                int day = Integer.parseInt(day_s);
+
+                if(schedule[month][day].equals(" ")){
+                    schedule[month][day] = name;
+                }
+                else {
+                    schedule[month][day] +=", " +name;
+                }
+            }
+        } catch (Exception e) {
+            Log.e("test2", e.toString());
+        }
+    }
+
+    private void showReservation() {
+        try {
+            JSONObject jsonObj = new JSONObject(myJSON);
+            data = jsonObj.getJSONArray("result");
+
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject c = data.getJSONObject(i);
+                String room = c.getString("room");
+                String date = c.getString("date");
+                String name = c.getString("name");
+
+                dataset.add((T) new reserved_room(Integer.parseInt(room), date, name));
+                adapter.notifyDataSetChanged();
+            }
+        } catch (Exception e) {
+            Log.e("test2", e.toString());
+        }
+    }
+
     protected String doInBackground(String... params) {
 
         String uri = "http://172.17.72.53/"+params[0];
@@ -210,6 +264,12 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
                 break;
             case 5:
                 showClaim();
+                break;
+            case 6:
+                showFom();
+                break;
+            case 7:
+                showReservation();
                 break;
             default:
 
