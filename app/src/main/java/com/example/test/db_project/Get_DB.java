@@ -4,6 +4,12 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.BaseAdapter;
 
+import com.example.test.db_project.Custom_Dataset.Bill_data;
+import com.example.test.db_project.Custom_Dataset.Grid_data;
+import com.example.test.db_project.Custom_Dataset.staff_claim_data;
+import com.example.test.db_project.Custom_Dataset.staff_info;
+import com.example.test.db_project.Custom_Dataset.staff_room_data;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -92,9 +98,48 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
             Log.e("test2", e.toString());
         }
     }
+
+    private void showRoom() {
+        try {
+            JSONObject jsonObj = new JSONObject(myJSON);
+            data = jsonObj.getJSONArray("result");
+
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject c = data.getJSONObject(i);
+                String room = c.getString("room");
+                String clean = c.getString("clean");
+                String amenity = c.getString("amenity");
+                String avail = c.getString("avail");
+
+                dataset.add((T) new staff_room_data(room, clean, amenity, avail));
+                adapter.notifyDataSetChanged();
+            }
+        } catch (Exception e) {
+            Log.e("test2", e.toString());
+        }
+    }
+
+    private void showClaim() {
+        try {
+            JSONObject jsonObj = new JSONObject(myJSON);
+            data = jsonObj.getJSONArray("result");
+
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject c = data.getJSONObject(i);
+                String room = c.getString("room");
+                String name = c.getString("name");
+                String memo = c.getString("memo");
+
+                dataset.add((T) new staff_claim_data(room, name, memo));
+                adapter.notifyDataSetChanged();
+            }
+        } catch (Exception e) {
+            Log.e("test2", e.toString());
+        }
+    }
     protected String doInBackground(String... params) {
 
-        String uri = "http://192.168.0.18/"+params[0];
+        String uri = "http://172.17.72.53/"+params[0];
         String param = params[1];
 
         Log.e("test2", uri);
@@ -159,6 +204,12 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
                 break;
             case 3:
                 showParking();
+                break;
+            case 4:
+                showRoom();
+                break;
+            case 5:
+                showClaim();
                 break;
             default:
 

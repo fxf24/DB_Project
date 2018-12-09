@@ -1,4 +1,4 @@
-package com.example.test.db_project;
+package com.example.test.db_project.Custom_Dataset;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+
+import com.example.test.db_project.R;
 
 import java.util.ArrayList;
 

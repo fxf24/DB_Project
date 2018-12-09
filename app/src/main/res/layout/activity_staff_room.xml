@@ -1,56 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Staff_Room">
+    android:orientation="vertical"
+    >
 
-    <TextView
-        android:id="@+id/room_m"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:text="ROOM"/>
+    <Spinner
+        android:id="@+id/spinner_room"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/clean"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_toRightOf="@+id/room_m"
-        android:gravity="center"
-        android:text="청소상태"/>
+    </Spinner>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/room_m"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="ROOM"/>
 
-    <TextView
-        android:id="@+id/amenity"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_toRightOf="@+id/clean"
-        android:gravity="center"
-        android:text="비품"/>
+        <TextView
+            android:id="@+id/clean"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/room_m"
+            android:gravity="center"
+            android:text="청소상태"/>
 
-    <TextView
-        android:id="@+id/note"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:layout_toRightOf="@+id/amenity"
-        android:text="특이사항"/>
+        <TextView
+            android:id="@+id/amenity"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/clean"
+            android:gravity="center"
+            android:text="비품"/>
+
+        <TextView
+            android:id="@+id/note"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/amenity"
+            android:text="특이사항"/>
+    </LinearLayout>
 
     <ListView
-        android:id="@+id/list_view1"
-        android:layout_below="@+id/room_m"
+        android:id="@+id/room_check"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </ListView>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="내 객실" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:text="내 객실" />-->
 
 
-</RelativeLayout>
+</LinearLayout>

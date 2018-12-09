@@ -36,7 +36,7 @@ public class Send_DB extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        String uri = "http://192.168.0.18/"+params[0];
+        String uri = "http://172.17.72.53/"+params[0];
         /* 인풋 파라메터값 생성 */
         String param = params[1];
         Log.e("test1",param);
@@ -94,6 +94,7 @@ public class Send_DB extends AsyncTask<String, Void, String> {
         } catch (Exception e)
         {
             Log.e("test1", e.toString());
+            e.printStackTrace();
             return null;
         }
     }
@@ -155,7 +156,7 @@ public class Send_DB extends AsyncTask<String, Void, String> {
             }
             else
             {
-                Log.e("RESULT","비밀번호가 일치하지 않습니다.");
+                Log.e("test1","비밀번호가 일치하지 않습니다.");
                 alertBuilder
                         .setTitle("알림")
                         .setMessage("아이디나 비밀번호가 일치하지 않습니다.")

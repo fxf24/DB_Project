@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/room_m"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="ROOM"/>
+
+    <TextView
+        android:id="@+id/clean"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/room_m"
+        android:gravity="center"
+        android:text="청소상태"/>
+
+    <TextView
+        android:id="@+id/amenity"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@+id/clean"
+        android:gravity="center"
+        android:text="비품"/>
+
+    <TextView
+        android:id="@+id/avail"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/amenity"
+        android:text="사용"/>
+</LinearLayout>

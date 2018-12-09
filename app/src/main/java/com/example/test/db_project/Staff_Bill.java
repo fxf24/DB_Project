@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.example.test.db_project.Custom_Dataset.Bill_Adapter;
+import com.example.test.db_project.Custom_Dataset.Bill_data;
+
 import java.util.ArrayList;
 
 public class Staff_Bill extends AppCompatActivity {

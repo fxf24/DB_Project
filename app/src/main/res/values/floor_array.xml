@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="location">
-        <item>1층</item>
         <item>2층</item>
         <item>3층</item>
         <item>4층</item>

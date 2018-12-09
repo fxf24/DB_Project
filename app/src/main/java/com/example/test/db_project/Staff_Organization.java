@@ -9,6 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import com.example.test.db_project.Custom_Dataset.staff_info;
+import com.example.test.db_project.Custom_Dataset.staff_info_Adapter;
+
 import java.util.ArrayList;
 
 public class Staff_Organization extends AppCompatActivity {
@@ -34,6 +37,7 @@ public class Staff_Organization extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 staff_infos.clear();
+                adapter.notifyDataSetChanged();
                 Log.e("test2",String.valueOf(position));
                 Get_DB<staff_info, staff_info_Adapter> get_db = new Get_DB<>(1, staff_infos, adapter);
                 get_db.execute("organization.php", "sql=select name, position, phone_num from hr where deptID=" +(position+1));

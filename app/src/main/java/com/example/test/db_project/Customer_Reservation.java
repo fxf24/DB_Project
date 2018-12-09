@@ -3,13 +3,12 @@ package com.example.test.db_project;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
+
+import com.example.test.db_project.Custom_Dataset.Custom_Adapter2;
+import com.example.test.db_project.Custom_Dataset.Data2;
 
 import java.util.ArrayList;
 

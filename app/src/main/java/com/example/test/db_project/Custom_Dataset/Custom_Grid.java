@@ -1,10 +1,12 @@
-package com.example.test.db_project;
+package com.example.test.db_project.Custom_Dataset;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.test.db_project.R;
 
 public class Custom_Grid extends LinearLayout {
     ImageView iv1;
