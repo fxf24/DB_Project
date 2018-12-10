@@ -3,48 +3,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/blur">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Reservation"
+        android:background="@drawable/round_button"
+        android:layout_margin="5dp"
         android:text="예약현황" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Room"
+        android:background="@drawable/round_button"
+        android:layout_margin="5dp"
         android:text="객실관리" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Roster"
+        android:background="@drawable/round_button"
+        android:layout_margin="5dp"
         android:text="근무표" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Claim"
+        android:background="@drawable/round_button"
+        android:layout_margin="5dp"
         android:text="클레임" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Bill"
+        android:background="@drawable/round_button"
+        android:layout_margin="5dp"
         android:text="지출현황" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Parking"
+        android:background="@drawable/round_button"
+        android:layout_margin="5dp"
         android:text="주차" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Org_chart"
+        android:background="@drawable/round_button"
+        android:layout_margin="5dp"
         android:text="조직도" />
 
 </LinearLayout>

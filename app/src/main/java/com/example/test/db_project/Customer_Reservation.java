@@ -26,26 +26,6 @@ public class Customer_Reservation extends AppCompatActivity {
     RadioGroup breakfast, parking;
     String bf, pk;
 
-    void real()
-    {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setMessage("예약하시겠습니까")
-                .setPositiveButton("예",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"예를 선택했습니다.",Toast.LENGTH_LONG).show();
-
-                    }
-                })
-                .setNegativeButton("아니오",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"아니오를 선택했습니다.",Toast.LENGTH_LONG).show();
-                    }
-                }).show();
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

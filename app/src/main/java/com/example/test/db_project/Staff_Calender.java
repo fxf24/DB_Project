@@ -37,7 +37,7 @@ public class Staff_Calender extends Activity {
         Log.e("test3",schedule[1][1]);
 
         Get_DB<Void, staff_info_Adapter> get_db = new Get_DB<>(6, schedule);
-        get_db.execute("fom.php","sql=select name,month(date),day(date) from fom NATnull,nulURAL JOIN hr order by date");
+        get_db.execute("fom.php","sql=select name,month(date),day(date) from fom NATURAL JOIN hr order by date");
         CalendarView calendar = findViewById(R.id.calendar);
         //리스너 등록
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {

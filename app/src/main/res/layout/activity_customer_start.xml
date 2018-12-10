@@ -11,27 +11,38 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="90dp"
+            android:background="@drawable/logo_cut"/>
         <Button
             android:id="@+id/reservation"
             android:onClick="OnClick"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="예약하기"
-            />
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button_line"
+            android:layout_gravity="center"/>
         <Button
             android:id="@+id/reservation_check"
             android:onClick="OnClick"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="예약확인"
-            />
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button_line"
+            android:layout_gravity="center"/>
         <Button
-            android:id="@+id/claim"
+            android:id="@+id/main"
             android:onClick="OnClick"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="클레임"
-            />
+            android:text="메인으로"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button_line"
+            android:layout_gravity="center"/>
+
 
     </LinearLayout>
 

@@ -14,6 +14,7 @@
         android:textSize="30sp" />
 
     <EditText
+        android:id="@+id/memo"
         android:layout_width="350dp"
         android:layout_height="200dp"
         android:hint="내용"
@@ -27,20 +28,25 @@
         android:layout_gravity="right">
 
         <Button
-            android:id="@+id/button14"
+            android:id="@+id/cancel"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_gravity="bottom"
             android:onClick="OnClick"
-            android:text="취소" />
+            android:text="취소"
+            android:background="@drawable/round_button_line"
+            />
 
         <Button
-            android:id="@+id/button13"
+            android:id="@+id/send_claim"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_gravity="bottom"
             android:onClick="OnClick"
-            android:text="등록" />
+            android:text="등록"
+            android:textColor="#ffffff"
+            android:background="@drawable/round_button_color"
+            android:layout_marginLeft="10dp"/>
 
 
     </LinearLayout>

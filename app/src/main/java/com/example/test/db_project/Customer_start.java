@@ -26,5 +26,9 @@ public class Customer_start extends AppCompatActivity {
             Intent intent = new Intent(Customer_start.this, Customer_Claim.class);
             startActivity(intent);
         }
+        else if(v.getId() == R.id.main){
+            Intent intent = new Intent(Customer_start.this, StartActivity.class);
+            startActivity(intent);
+        }
     }
 }

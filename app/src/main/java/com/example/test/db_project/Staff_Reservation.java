@@ -25,6 +25,6 @@ public class Staff_Reservation extends AppCompatActivity {
         reservation_list.setAdapter(ra1);
 
         Get_DB<reserved_room, reserved_room_Adapter> get_db = new Get_DB<>(7, reserved_roomArrayList, ra1);
-        get_db.execute("reservation.php","sql=select roomID, date, name from reservation natural join guest order by date");
+        get_db.execute("reservation.php","sql=select ifnull(roomID, 0), ifnull(reserv_date,'null'), name from reservation natural join guest order by reserv_date");
     }
 }

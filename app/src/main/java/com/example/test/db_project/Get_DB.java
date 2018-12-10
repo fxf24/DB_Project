@@ -1,6 +1,5 @@
 package com.example.test.db_project;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.BaseAdapter;

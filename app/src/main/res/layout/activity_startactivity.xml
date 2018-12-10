@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/main" />
+            android:src="@drawable/main4" />
     </LinearLayout>
 
     <LinearLayout
@@ -28,11 +28,12 @@
         <Button
             android:id="@+id/button2"
             android:onClick="OnClick"
-
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_weight="1"
-            android:text="고객" />
+            android:text="고객"
+            android:background="@drawable/round_button"
+            android:layout_margin="5dp"/>
 
         <Button
             android:id="@+id/button3"
@@ -40,7 +41,9 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:onClick="OnClick"
-            android:text="직원" />
+            android:text="직원"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button"/>
     </LinearLayout>
 
 

@@ -49,6 +49,8 @@
         android:layout_height="match_parent"
         android:text="선택"
         android:layout_weight="20"
+        android:background="@drawable/round_button_line"
+        android:layout_margin="5dp"
         />
     <View
         android:layout_width="0dp"
