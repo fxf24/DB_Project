@@ -29,7 +29,7 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
     private ArrayList<T> dataset;
     private S adapter;
     private String schedule[][];
-
+    private String room_type, room_view;
     public Get_DB(int category, ArrayList<T> dataset, S adapter) {
         this.category = category;
         this.dataset = dataset;
@@ -178,11 +178,16 @@ public class Get_DB<T, S extends BaseAdapter> extends AsyncTask<String, Void, St
 
             for (int i = 0; i < data.length(); i++) {
                 JSONObject c = data.getJSONObject(i);
-                String room = c.getString("room");
-                String date = c.getString("date");
+                String staffID = c.getString("staffID");
+                String begin = c.getString("begin");
+                String end = c.getString("end");
                 String name = c.getString("name");
+                String phone = c.getString("phone");
+                String type = c.getString("type");
+                String view = c.getString("view");
+                String reservID = c.getString("reservID");
 
-                dataset.add((T) new reserved_room(Integer.parseInt(room), date, name));
+                dataset.add((T) new reserved_room(staffID, begin+"\n~"+end, name, phone, type, view, reservID));
                 adapter.notifyDataSetChanged();
             }
         } catch (Exception e) {

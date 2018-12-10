@@ -42,14 +42,15 @@ public class reserved_room_Adapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.reserved_room,null);
         }
 
-        TextView room_textView = convertView.findViewById(R.id.room);
-        TextView date_textView = convertView.findViewById(R.id.date);
-        TextView staff_name_textView = convertView.findViewById(R.id.staff_name);
+        TextView staffID = convertView.findViewById(R.id.staffID);
+        TextView date = convertView.findViewById(R.id.date);
+        TextView name = convertView.findViewById(R.id.name);
+        TextView phone = convertView.findViewById(R.id.phone_num);
 
-        String room = String.valueOf(reserved_roomArrayList.get(position).getRoom());
-        room_textView.setText(room);
-        date_textView.setText(reserved_roomArrayList.get(position).getDate());
-        staff_name_textView.setText(reserved_roomArrayList.get(position).getStaff_name());
+        staffID.setText(reserved_roomArrayList.get(position).getStaffID());
+        date.setText(reserved_roomArrayList.get(position).getDate());
+        name.setText(reserved_roomArrayList.get(position).getName());
+        phone.setText(reserved_roomArrayList.get(position).getPhone_num());
 
         return convertView;
     }

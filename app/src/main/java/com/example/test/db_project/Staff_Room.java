@@ -48,6 +48,14 @@ public class Staff_Room extends AppCompatActivity {
             }
         });
 
+        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+//                Get_DB<staff_room_data, staff_room_adapter> get_db = new Get_DB<>(4, data, adapter);
+//                get_db.execute("room.php","sql=select roomID, clean, amenity, availability from availability where roomID like '" +(position+2)+"%'");
+            }
+        });
 //        select roomID, clean, amenity, availability from availability;
     }
 }

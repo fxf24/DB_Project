@@ -1,6 +1,5 @@
 package com.example.test.db_project;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,12 +18,12 @@ public class Staff_Login extends AppCompatActivity {
     }
 
     public void login(View v){
-//        Send_DB send_db = new Send_DB(Staff_Login.this, 1);
-//        String send_data = "u_id=" + id.getText().toString() + "&u_pw=" + pw.getText().toString();
-//        send_db.execute("Login.php", send_data, pw.getText().toString());
+        Send_DB send_db = new Send_DB(Staff_Login.this, 1);
+        String send_data = "u_id=" + id.getText().toString() + "&u_pw=" + pw.getText().toString();
+        send_db.execute("Login.php", send_data, pw.getText().toString());
 
-        Intent intent = new Intent(Staff_Login.this, Staff_Start.class);
-        startActivity(intent);
+//        Intent intent = new Intent(Staff_Login.this, Staff_Start.class);
+//        startActivity(intent);
 
     }
 }

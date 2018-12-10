@@ -126,6 +126,10 @@ public class Send_DB extends AsyncTask<String, Void, String> {
             case 3:
                 reservation_check();
                 break;
+            case 4:
+                break;
+            case 5:
+                break;
         }
 
 

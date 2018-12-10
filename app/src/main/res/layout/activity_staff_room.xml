@@ -44,7 +44,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_toRightOf="@+id/amenity"
-            android:text="특이사항"/>
+            android:text="사용여부"/>
     </LinearLayout>
 
     <ListView

@@ -44,7 +44,7 @@
         android:onClick="Bill"
         android:background="@drawable/round_button"
         android:layout_margin="5dp"
-        android:text="지출현황" />
+        android:text="지출내역" />
 
     <Button
         android:layout_width="wrap_content"
