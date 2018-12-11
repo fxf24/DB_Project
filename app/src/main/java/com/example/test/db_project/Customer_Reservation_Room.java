@@ -1,7 +1,14 @@
 package com.example.test.db_project;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -131,6 +138,34 @@ public class Customer_Reservation_Room extends AppCompatActivity {
                                         intent.putExtra("room_type", room_type);
                                         intent.putExtra("room_view", room_view);
 
+                                        Bitmap mLargetIconForNoti=
+                                                BitmapFactory.decodeResource(getResources(),R.drawable.alert_image);
+
+                                        NotificationManager mNotificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+
+                                        NotificationChannel notificationChannel = new NotificationChannel("channel_id", "channel_name", NotificationManager.IMPORTANCE_DEFAULT);
+                                        notificationChannel.setDescription("channel description");
+                                        notificationChannel.enableLights(true);
+                                        notificationChannel.setLightColor(Color.GREEN);
+                                        notificationChannel.enableVibration(true);
+                                        notificationChannel.setVibrationPattern(new long[]{100, 200, 100, 200});
+                                        notificationChannel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
+                                        mNotificationManager.createNotificationChannel(notificationChannel);
+
+
+                                        NotificationCompat.Builder mBuilder=
+                                                new NotificationCompat.Builder(Customer_Reservation_Room.this, "channel_id")
+                                                .setSmallIcon(R.drawable.alert_image)
+                                                .setContentTitle("알림")
+                                                .setContentText("새로운 예약이 들어왔습니다!")
+                                                .setDefaults(Notification.DEFAULT_SOUND)
+                                                .setLargeIcon(mLargetIconForNoti)
+                                                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                                                .setAutoCancel(true);
+
+
+
+                                        mNotificationManager.notify(0,mBuilder.build());
                                         startActivity(intent);
                                     }
                                 })
